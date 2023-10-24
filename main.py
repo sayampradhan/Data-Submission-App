@@ -7,7 +7,8 @@ from openpyxl import Workbook
 import pathlib
 
 # Check if the 'data_entry.xlsx' file exists, and create it with headers if it doesn't
-file_path = pathlib.Path('data_entry.xlsx')
+file = input("File Name (without .xlsx) : ")
+file_path = pathlib.Path(file + ".xlsx")
 if file_path.exists():
     print("File already exists.")
 else:
@@ -78,7 +79,7 @@ Label(root, text="Please fill out this Entry form:", font="arial 13", bg="#FFFBC
 Label(root, text='Name', font=23, bg="#FFFBC8", fg="#48494B").place(x=50, y=100)
 Label(root, text='Contact No.', font=23, bg="#FFFBC8", fg="#48494B").place(x=50, y=150)
 Label(root, text='Age', font=23, bg="#FFFBC8", fg="#48494B").place(x=50, y=200)
-Label(root, text='Gender', font=23, bg="#FFFBC8", fg="#48494B").place(x=370, y=200)
+Label(root, text='Gender', font=23, bg="#FFFBC8", fg="#48494B").place(x=390, y=200)
 Label(root, text='Address', font=23, bg="#FFFBC8", fg="#48494B").place(x=50, y=250)
 
 # Entry widgets
@@ -86,16 +87,16 @@ nameValue = StringVar()
 contactValue = StringVar()
 AgeValue = StringVar()
 
-nameEntry = Entry(root, textvariable=nameValue, width=45, bd=2, font=20)
-contactEntry = Entry(root, textvariable=contactValue, width=45, bd=2, font=20)
+nameEntry = Entry(root, textvariable=nameValue, width=40, bd=2, font=20)
+contactEntry = Entry(root, textvariable=contactValue, width=40, bd=2, font=20)
 AgeEntry = Entry(root, textvariable=AgeValue, width=15, bd=2, font=20)
 
 # Gender Combobox
 gender_combobox = Combobox(root, values=['Male', 'Female'], font='arial 14', state='readonly', width=14)
-gender_combobox.place(x=440, y=200)
+gender_combobox.place(x=470, y=200)
 gender_combobox.set('Male')
 
-addressEntry = Text(root, width=50, height=4, bd=4)
+addressEntry = Text(root, width=55, height=4, bd=4)
 
 # Place entry widgets
 nameEntry.place(x=200, y=100)
